@@ -1,7 +1,11 @@
 export class Polygon {
-  constructor(path, isFilled) {
+  constructor(path, option) {
     this.path = path;
-    this.isFilled = isFilled;
+    this.color = (typeof option.color !== 'undefined') ? option.color : '#000';
+    this.strokeColor = (typeof option.strokeColor !== 'undefined') ? option.strokeColor : '#000';
+    this.lineWidth = (typeof option.lineWidth !== 'undefined') ? option.lineWidth : 1;
+    this.fillVisible = (typeof option.fillVisible !== 'undefined') ? option.fillVisible : true;
+    this.strokeVisible = (typeof option.strokeVisible !== 'undefined') ? option.strokeVisible : false;
   }
 
   checkType() {
@@ -9,10 +13,15 @@ export class Polygon {
   }
 }
 
-export function Render(canvas, objs) {
+export function Render(option) {
+  const ctx = option.context;
+  const objs = option.objects;
+
   objs.forEach(obj => {
-    const ctx = canvas.getContext('2d');
     ctx.beginPath();
+    ctx.fillStyle = obj.color;
+    ctx.strokeStyle = obj.strokeColor;
+    ctx.lineWidth = obj.lineWidth;
 
     switch (obj.checkType()) {
       case 0:
@@ -33,10 +42,11 @@ export function Render(canvas, objs) {
     
     ctx.closePath();
     
-    if (!obj.isFilled) {
-      ctx.stroke();
-    } else {
+    if (obj.fillVisible) {
       ctx.fill();
+    }
+    if (obj.strokeVisible) {
+      ctx.stroke();
     }
   });
 }
