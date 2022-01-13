@@ -2,7 +2,7 @@
   "name": "objecty.js",
   "version": "1.0.0",
   "type": "module",
-  "description": "A javascript library for canvas",
+  "description": "A javascript library for canvas drawing",
   "main": "./src/objecty.js",
   "directories": {
     "example": "examples"
