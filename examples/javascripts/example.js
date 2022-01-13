@@ -1,4 +1,4 @@
-import { Arc, Polygon, Render } from "../../src/objecty.js";
+import { Arc, Polygon, Renderer } from "../../src/objecty.js";
 
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
@@ -20,6 +20,6 @@ const circle = new Arc(10, 10, 10, 0, Math.PI * 2, {
   strokeVisible: true
 });
 
-Render(ctx, [
-  square, circle
-]);
+const myRenderer = new Renderer(square, circle);
+
+myRenderer.render(ctx);

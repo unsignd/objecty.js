@@ -33,43 +33,49 @@ export class Arc {
   }
 }
 
-export function Render(context, objects) {
-  const ctx = context;
-  const objs = objects;
+export class Renderer {
+  constructor(...objects) {
+    this.objs = objects;
+  }
 
-  objs.forEach(obj => {
-    ctx.beginPath();
-    ctx.fillStyle = obj.color;
-    ctx.strokeStyle = obj.strokeColor;
-    ctx.lineWidth = obj.lineWidth;
+  render(context) {
+    this.ctx = context;
 
-    switch (obj.checkType()) {
-      case 0:
-        let isFirst = false;
-
-        obj.path.forEach(path => {
-          if (isFirst === 0) {
-            ctx.moveTo(path.x, path.y);
-            isFirst = true;
-          } else {
-            ctx.lineTo(path.x, path.y);
-          }
-        });
-        break;
-      case 1:
-        ctx.arc(obj.x, obj.y, obj.radius, obj.startAngle, obj.endAngle, obj.clockwise);
-        break;
-      default:
-        break;
-    }
-    
-    ctx.closePath();
-    
-    if (obj.fillVisible) {
-      ctx.fill();
-    }
-    if (obj.strokeVisible) {
-      ctx.stroke();
-    }
-  });
+    this.objs.forEach(obj => {
+      this.ctx.beginPath();
+      this.ctx.fillStyle = obj.color;
+      this.ctx.strokeStyle = obj.strokeColor;
+      this.ctx.lineWidth = obj.lineWidth;
+  
+      switch (obj.checkType()) {
+        case 0:
+          let isFirst = false;
+  
+          obj.path.forEach(path => {
+            if (isFirst === 0) {
+              this.ctx.moveTo(path.x, path.y);
+              isFirst = true;
+            } else {
+              this.ctx.lineTo(path.x, path.y);
+            }
+          });
+          break;
+        case 1:
+          this.ctx.arc(obj.x, obj.y, obj.radius, obj.startAngle, obj.endAngle, obj.clockwise);
+          break;
+        default:
+          break;
+      }
+      
+      this.ctx.closePath();
+      
+      if (obj.fillVisible) {
+        this.ctx.fill();
+      }
+      if (obj.strokeVisible) {
+        this.ctx.stroke();
+      }
+    });
+  }
+  
 }
