@@ -1,4 +1,4 @@
-import { Arc, Polygon, Rect, Renderer } from "../../src/objecty.js";
+import { Arc, Polygon, Rect, Renderer, Text } from "../../src/objecty.js";
 
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
@@ -23,16 +23,21 @@ const rect = new Rect(100, 150, 50, 80, {
   fillColor: '#123456'
 });
 
-const clearRect = new Rect(20, 20, 50, 50, {
+const clearRect = new Rect(20, 20, 50, 40, {
   doClear: true
 });
 
-const myRenderer = new Renderer(square, circle, rect, clearRect);
+const text = new Text(100, 100, 'This is Text', {
+  fillColor: 'gray',
+});
+
+const myRenderer = new Renderer(square, clearRect, circle, rect, text);
 
 myRenderer.render(ctx);
 
 setInterval(() => {
-  circle.radius += 1;
+  circle.radius *= 1.005;
+  circle.lineWidth *= 1.01;
   circle.x += 1;
 
   myRenderer.render(ctx);
