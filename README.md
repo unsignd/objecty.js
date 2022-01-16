@@ -3,7 +3,7 @@
 `objecty.js` is a javascript library for canvas drawing which objectify shapes.
 
 ## Setup
-Download `dist/objecty.js` and include it in your html file.
+Download last version of `objecty.js` from Releases and include it in your html.
 ```html
 <script src="objecty.js"></script>
 ```
