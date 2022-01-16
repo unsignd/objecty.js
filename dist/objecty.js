@@ -101,7 +101,7 @@ export class Text extends Objecty {
     this.y = y;
     this.text = text;
     this.maxWidth = (isOptionEnable && typeof option.maxWidth !== 'undefined') ? option.maxWidth : -1;
-    this.font = (isOptionEnable && typeof option.font !== 'undefined') ? option.font : '48px serif';
+    this.font = (isOptionEnable && typeof option.font !== 'undefined') ? option.font : '10px sans-serif';
     this.textAlign = (isOptionEnable && typeof option.textAlign !== 'undefined') ? option.textAlign : 'start';
     this.textBaseline = (isOptionEnable && typeof option.textBaseline !== 'undefined') ? option.textBaseline : 'alphabetic';
     this.direction = (isOptionEnable && typeof option.direction !== 'undefined') ? option.direction : 'inherit';

@@ -1,12 +1,11 @@
 {
   "name": "objecty.js",
   "version": "1.0.0",
-  "type": "module",
-  "description": "A javascript library for canvas drawing",
-  "main": "./src/objecty.js",
-  "directories": {
-    "example": "examples"
-  },
+  "description": "Javascript library for canvas drawing which objectify shapes.",
+  "main": "dist/objecty.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,8 +17,8 @@
     "canvas",
     "drawing"
   ],
-  "author": "Yejun Kim <unsigndid@gmail.com> (https://github.com/unsignd)",
-  "license": "MIT",
+  "author": "Yejun Kim <unsigndid@gmail.com>",
+  "license": "GNU General Public License v3.0",
   "bugs": {
     "url": "https://github.com/unsignd/objecty.js/issues"
   },
