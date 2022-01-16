@@ -1,7 +1,7 @@
 {
   "name": "objecty.js",
   "version": "1.0.0",
-  "description": "Javascript library for canvas drawing which objectify shapes.",
+  "description": "Javascript module for canvas drawing which objectify shapes.",
   "main": "lib/objecty.js",
   "files": [
     "lib"
