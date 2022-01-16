@@ -5,7 +5,7 @@
 ## Setup
 Download latest version of `objecty.js` from Releases and include it in your html.
 ```html
-<script src="objecty.js"></script>
+<script src="path/objecty.js"></script>
 ```
 
 ## Classes
@@ -13,6 +13,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
   Declare Polygon class on your script.
 
   ```js
+  import { Polygon } from "path/objecty.js";
+
   new Polygon(path, option);
   ```
 
@@ -37,6 +39,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
 
   ### Example of using Polygon
   ```js
+  import { Polygon } from "path/objecty.js";
+
   const myPolygon = new Polygon([
     {x: 20, y: 10},
     {x: 5, y: 50},
@@ -52,6 +56,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
   Declare Rect class on your script.
 
   ```js
+  import { Rect } from "path/objecty.js";
+
   new Rect(x, y, width, height, option);
   ```
 
@@ -80,6 +86,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
 
   ### Example of using Rect
   ```js
+  import { Rect } from "path/objecty.js";
+
   const myRect = new Rect(100, 150, 100, 80, {
     fillColor: 'gray'
   });
@@ -88,6 +96,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
   Declare Arc class on your script.
 
   ```js
+  import { Arc } from "path/objecty.js";
+  
   new Arc(x, y, radius, startAngle, endAngle, option);
   ```
 
@@ -117,6 +127,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
 
   ### Example of using Arc
   ```js
+  import { Arc } from "path/objecty.js";
+
   const myArc = new Arc(10, 10, 25, 0, Math.PI * 2, {
     strokeColor: 'blue',
     lineWidth: 10,
@@ -128,6 +140,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
   Declare Text class on your script.
 
   ```js
+  import { Text } from "path/objecty.js";
+
   new Text(x, y, text, option);
   ```
   
@@ -159,6 +173,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
 
   ### Example of using Text
   ```js
+  import { Text } from "path/objecty.js";
+
   const myText = new Text(200, 50, 'Hello writing docs is crazy tire.', {
     fillColor: 'red',
     font: '48px serif'
@@ -168,6 +184,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
   Declare Image class on your script.
 
   ```js
+  import { Image } from "path/objecty.js";
+
   new Image(dx, dy, image, option);
   ```
   
@@ -195,6 +213,8 @@ Download latest version of `objecty.js` from Releases and include it in your htm
 
   ### Example of using Image
   ```js
+  import { Image } from "path/objecty.js";
+
   const myImage = new Image(0, 0, myImage, {
     dWidth: 100,
     dHeight: 100
@@ -209,6 +229,11 @@ There are two ways to render these objects in `objecty.js`.
   The function `render(context)` automatically renders each object.
 
   ```js
+  import { ..., Renderer } from "path/objecty.js";
+
+
+  ...
+
   const myRenderer = new Renderer(...objects);
 
   myRenderer.render(context);
@@ -217,6 +242,9 @@ There are two ways to render these objects in `objecty.js`.
 
   ### Example of using Renderer
   ```js
+  import { ..., Renderer } from "path/objecty.js";
+
+
   ...
 
   const canvas = document.querySelector('#canvas');
@@ -236,6 +264,9 @@ There are two ways to render these objects in `objecty.js`.
 
   ### Example of using `render(context)`
   ```js
+  import { ..., Polygon } from "path/objecty.js";
+
+
   ...
 
   const canvas = document.querySelector('#canvas');
@@ -261,6 +292,9 @@ You can modify the parameters of all objects in `objecty.js`.
 <br>
 
 ```js
+import { ..., Polygon } from "path/objecty.js";
+
+
 ...
 
 const myPolygon = new Polygon([
