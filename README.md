@@ -1,6 +1,6 @@
 # objecty.js
 
-`objecty.js` is a javascript library for canvas drawing which objectify shapes.
+`objecty.js` is a javascript module for canvas drawing which objectify shapes.
 
 ## Setup
 Download latest version of `objecty.js` from Releases and include it in your directory.
